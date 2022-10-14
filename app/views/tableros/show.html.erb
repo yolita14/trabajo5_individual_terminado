@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tablero %>
+
+<div>
+  <%= link_to "Edit this tablero", edit_tablero_path(@tablero) %> |
+  <%= link_to "Back to tableros", tableros_path %>
+
+  <%= button_to "Destroy this tablero", @tablero, method: :delete %>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2022-10-13
+  publicacion: one
+  usuario: one
+
+two:
+  fecha: 2022-10-13
+  publicacion: two
+  usuario: two

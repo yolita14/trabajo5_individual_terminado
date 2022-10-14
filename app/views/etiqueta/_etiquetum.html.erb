@@ -1,0 +1,14 @@
+<div id="<%= dom_id etiquetum %>">
+  <p>
+    <strong>Nombre:</strong>
+    <%= etiquetum.nombre %>
+  </p>
+
+  <p>
+    <strong>Publicacion:</strong>
+    <% etiquetum.publicacion.each do |e| %>
+      <%= e.titulo %>  
+    <% end %>
+  </p>
+
+</div>

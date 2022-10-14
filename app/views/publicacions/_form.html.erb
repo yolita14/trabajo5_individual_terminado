@@ -1,0 +1,33 @@
+<%= form_with(model: publicacion) do |form| %>
+  <% if publicacion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(publicacion.errors.count, "error") %> prohibited this publicacion from being saved:</h2>
+
+      <ul>
+        <% publicacion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :titulo, style: "display: block" %>
+    <%= form.text_field :titulo %>
+  </div>
+  <div>
+  <p>Etiquetas</p>
+   <%= form.label :etiqueta %>
+    <%= form.collection_check_boxes :etiquetum_ids, @etiqueta, :id, :nombre %>
+  </div>
+  <div>
+    <%= form.hidden_field :usuario_id, value:current_usuario.id %>
+  </div>
+  <div>
+    <%= form.label :foto %>
+    <%= form.file_field :foto %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

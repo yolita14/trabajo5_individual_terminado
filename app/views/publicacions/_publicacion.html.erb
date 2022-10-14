@@ -1,0 +1,17 @@
+<div id="<%= dom_id publicacion %>">
+  <p>
+    <strong>Titulo:</strong>
+    <%= publicacion.titulo %>
+  </p>
+  <p> 
+     <strong>Etiquetas:</strong> 
+     <% publicacion.etiqueta.each do |m| %>
+     <%=  m.nombre %>
+     <% end %>
+  </p>
+  <p>
+    <% if publicacion.foto.attached? %>
+    <%= image_tag publicacion.foto, size: '100'%>
+    <% end %>
+  </p>
+</div>

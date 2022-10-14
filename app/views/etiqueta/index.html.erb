@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Etiqueta</h1>
+
+<div id="etiqueta">
+  <% @etiqueta.each do |etiquetum| %>
+    <%= render etiquetum %>
+    <p>
+      <%= link_to "Show this etiquetum", etiquetum %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New etiquetum", new_etiquetum_path %>

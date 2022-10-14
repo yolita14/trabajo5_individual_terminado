@@ -1,0 +1,31 @@
+<%= form_with(model: tablero) do |form| %>
+  <% if tablero.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tablero.errors.count, "error") %> prohibited this tablero from being saved:</h2>
+
+      <ul>
+        <% tablero.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :publicacion_id, style: "display: block" %>
+    <%= form.collection_select :publicacion_id, @publicacions, :id, :titulo %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :usuario_id, value:current_usuario.id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

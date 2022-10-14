@@ -1,0 +1,15 @@
+<h1>Usuarios#mostrar</h1>
+<p>Find me in app/views/usuarios/mostrar.html.erb</p>
+<div> 
+ <h3>
+    <%= @usuario.email %>
+ </h3>
+</div>
+<div>
+  <% @usuario.publicacions.each do |m| %>
+    <%= m.titulo %>
+    <% m.etiqueta.each do |n| %>
+     <%= n.nombre %>   
+     <% end %>
+  <% end %>
+</div>

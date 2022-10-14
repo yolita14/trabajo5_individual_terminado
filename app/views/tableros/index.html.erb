@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tableros</h1>
+
+<div id="tableros">
+  <% @tableros.each do |tablero| %>
+    <%= render tablero %>
+    <p>
+      <%= link_to "Show this tablero", tablero %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tablero", new_tablero_path %>
