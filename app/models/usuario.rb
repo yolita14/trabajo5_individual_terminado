@@ -5,4 +5,10 @@ class Usuario < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :publicacions, through: :tableros
   accepts_nested_attributes_for :publicacions 
+  enum rol: [:fotografo, :administrador]
+  after_initialize do
+    if self.new.record?
+      self.rol ||= :fotografo
+    end
+  end
 end

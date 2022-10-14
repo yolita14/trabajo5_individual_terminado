@@ -1,5 +1,6 @@
 class EtiquetaController < ApplicationController
   before_action :set_etiquetum, only: %i[ show edit update destroy ]
+  before_action :permitted_administrador?, except: [:index, :show]
 
   # GET /etiqueta or /etiqueta.json
   def index

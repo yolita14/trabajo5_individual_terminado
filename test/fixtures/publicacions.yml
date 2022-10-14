@@ -2,6 +2,10 @@
 
 one:
   titulo: MyString
+  usuario: one
+  etiquetum: one
 
 two:
   titulo: MyString
+  usuario: two
+  etiquetum: two
